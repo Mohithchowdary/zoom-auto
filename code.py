@@ -1,6 +1,16 @@
+""" 
+Install all these modules before running the code:
+    pip install schedule
+    pip install keyboard
+    pip install pyttsx3
+"""
+
 import os, time, schedule, pyttsx3, keyboard
 
-#Please replace the links & timings according to your schedule.
+#replace it with your name.
+name = "Mohith"
+
+#please replace the links & timings according to your schedule. (24hr clock)
 class_1_link , class_1_time = "https://zoom.us/j/94645882407" , "08:29:55"
 class_2_link , class_2_time = "https://zoom.us/j/96579207066" , "09:44:55"
 class_3_link , class_3_time = "https://zoom.us/j/95410824792" , "11:29:55"
@@ -17,14 +27,14 @@ engine.setProperty('voice', voices[1].id)
 #core
 def Join_class(class_link, class_time):
     print("\nclass time: " + class_time + "\nclass link: " + class_link)
-    engine.say("Hey Anónimo. You have an online about to begin in 5 seconds.")
+    engine.say("Hey " + name + ". You have an online class  about to begin in 5 seconds.")
     engine.runAndWait()
     time.sleep(5)
     keyboard.press_and_release('win + m')
     time.sleep(2)
     
     try:
-      os.startfile("C:\Program Files\Google\Chrome\Application\chrome.exe")
+      os.startfile("C:\Program Files\Google\Chrome\Application\chrome.exe") #chrome-path
       time.sleep(4)
       keyboard.write(class_link)
       keyboard.press_and_release('enter')
