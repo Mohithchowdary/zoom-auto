@@ -27,7 +27,7 @@ engine.setProperty('voice', voices[1].id)
 #core
 def Join_class(class_link, class_time):
     print("\nclass time: " + class_time + "\nclass link: " + class_link)
-    engine.say("Hey " + name + ". You have an online class  about to begin in 5 seconds.")
+    engine.say("Hey " + name + ". You have an online class - which is about to begin in 5 seconds.")
     engine.runAndWait()
     time.sleep(5)
     keyboard.press_and_release('win + m')
