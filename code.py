@@ -27,7 +27,7 @@ engine.setProperty('voice', voices[1].id)
 #core
 def Join_class(class_link, class_time):
     print("\nclass time: " + class_time + "\nclass link: " + class_link)
-    engine.say("Hey " + name + ". You have an online class - which is about to begin in 5 seconds.")
+    engine.say("Hey " + name + ". You have a zoom meeting - which is about to begin in 5 seconds.")
     engine.runAndWait()
     time.sleep(5)
     keyboard.press_and_release('win + m')
@@ -42,8 +42,9 @@ def Join_class(class_link, class_time):
       keyboard.press_and_release('left + enter')
       time.sleep(8)
     except:
-      print("Error: Couldn't start web-browser.")
-    
+      print("Error: web-browser/network connection")
+      engine.say("Hey " + name + ". I wasn't able to join your zoom meeting. Please check your web browser and network connection, and try again!")
+      engine.runAndWait()
     time.sleep(5)
 
 #comment-out or just remove in case you don't need them.
